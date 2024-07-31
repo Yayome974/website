@@ -1,0 +1,21 @@
+body {
+  background-color: rgba(254, 254, 254, 0.931);
+  overflow: hidden;
+}
+
+.carre3 {
+  width: 3000px;
+  height: 120px;
+  background-color: #4564ad;
+  top: 0px;
+  position: absolute;
+  left: 0px;
+}
+
+.imagepp {
+  left: 10%;
+  position: absolute;
+  top: 30%;
+  height: 420px;
+  width: 700px;
+}
