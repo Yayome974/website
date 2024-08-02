@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title class="titre">Recette</title>
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <div class="Titlepp">Original American Cookies de Mike</div>
+    <script src="recette.js"></script>
+    <div class="carre3"></div>
+    <img src="21945_w600 2.png" alt="" class="imagepp" />
+    <input
+      type="search"
+      id="search"
+      onchange="ouvrirePage()"
+      class="search"
+      placeholder="Rechercher une recette"
+    />
+    <input
+      type="button"
+      id="button"
+      onclick="ouvrirePage()"
+      class="Rechercher"
+    />
+    <img
+      src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
+      alt=""
+      class="iconesearch"
+    />
+    <div id="mySidenav" class="sidenav">
+      <a id="closeBtn" href="#" class="close">×</a>
+      <ul>
+        <li><a href="#">A propos</a></li>
+        <li><a href="#">Nos services</a></li>
+        <li><a href="#">Témoignages</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <a href="#" id="openBtn">
+      <span class="burger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </a>
+    <script>
+      var sidenav = document.getElementById("mySidenav");
+      var openBtn = document.getElementById("openBtn");
+      var closeBtn = document.getElementById("closeBtn");
+
+      openBtn.onclick = openNav;
+      closeBtn.onclick = closeNav;
+
+      /* Set the width of the side navigation to 250px */
+      function openNav() {
+        sidenav.classList.add("active");
+      }
+
+      /* Set the width of the side navigation to 0 */
+      function closeNav() {
+        sidenav.classList.remove("active");
+      }
+    </script>
+    <div class="star">
+      <img src="star_filled-1.png" alt="Star 1" />
+      <img src="star_filled-2.png" alt="Star 2" />
+      <img src="star_filled-3.png" alt="Star 3" />
+      <img src="star_filled.png" alt="Star 4" />
+      <img src="star.png" alt="Star 5" />
+    </div>
+  </head>
+</html>
