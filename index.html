@@ -33,23 +33,19 @@
     <script>
       function ouvrirPage() {
         var a = document.getElementById("search").value.toLowerCase();
+        console.log("Valeur entrée :", a); // Ajout d'un message de débogage
 
         if (a === "chat") {
+          console.log("Recherche 'chat' détectée"); // Ajout d'un message de débogage
           window.open(
             "https://www.google.com/search?client=opera&q=api+recette+de+cuisine&sourceid=opera&ie=UTF-8&oe=UTF-8"
           );
-        }
-
-        if (a === "chien") {
+        } else if (a === "chien") {
+          console.log("Recherche 'chien' détectée"); // Ajout d'un message de débogage
           window.open("/customizedalert.html");
-        }
-
-        if (a === "youtube") {
-          window.open("https://www.youtube.com/");
         } else {
-          window.open(
-            "https://www.youtube.com/watch?v=OW5PkOJuv6w&list=PLviYa5fdYrL72FcOR67HHeahfOXykejJx"
-          );
+          console.log("Recherche par défaut détectée"); // Ajout d'un message de débogage
+          window.open("https://www.youtube.com/");
         }
       }
     </script>
