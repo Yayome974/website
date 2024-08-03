@@ -18,16 +18,34 @@
     <input
       type="search"
       id="search"
-      onchange="ouvrirePage()"
+      onchange="ouvrirPage()"
       class="search"
       placeholder="Rechercher une recette"
     />
     <input
       type="button"
       id="button"
-      onclick="ouvrirePage()"
+      onclick="ouvrirPage()"
       class="Rechercher"
     />
+
+    <script>
+      function ouvrirPage() {
+        var a = document.getElementById("search").value;
+
+        if (a === "chat") {
+          window.open("/index.html");
+        }
+
+        if (a === "chien") {
+          window.open("/customizedalert.html");
+        }
+
+        if (a === "youtube") {
+          window.open("https://www.youtube.com/");
+        }
+      }
+    </script>
     <img
       src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
       alt=""
@@ -36,8 +54,8 @@
     <div id="mySidenav" class="sidenav">
       <a id="closeBtn" href="#" class="close">×</a>
       <ul>
-        <li><a href="#">A propos</a></li>
-        <li><a href="#">Nos services</a></li>
+        <li><a href="#">Acceuile</a></li>
+        <li><a href="#"></a></li>
         <li><a href="#">Témoignages</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
