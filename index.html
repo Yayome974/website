@@ -15,6 +15,7 @@
     <script src="recette.js"></script>
     <div class="carre3"></div>
     <img src="21945_w600 2.png" alt="" class="imagepp" />
+    <img src="Capture d'écran 2024-08-02 133406.png" alt="" class="Etape1" />
     <input
       type="search"
       id="search"
@@ -31,9 +32,9 @@
 
     <script>
       function ouvrirPage() {
-        var a = document.getElementById("search").value;
+        var a = document.getElementById("search").value.toLowerCase();
 
-        if (a === "Chat")  {
+        if (a === "chat") {
           window.open(
             "https://www.google.com/search?client=opera&q=api+recette+de+cuisine&sourceid=opera&ie=UTF-8&oe=UTF-8"
           );
@@ -43,8 +44,12 @@
           window.open("/customizedalert.html");
         }
 
-        if (a === "Youtube") {
+        if (a === "youtube") {
           window.open("https://www.youtube.com/");
+        } else {
+          window.open(
+            "https://www.youtube.com/watch?v=OW5PkOJuv6w&list=PLviYa5fdYrL72FcOR67HHeahfOXykejJx"
+          );
         }
       }
     </script>
