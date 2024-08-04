@@ -1,6 +1,6 @@
 body {
   background-color: rgba(254, 254, 254, 0.931);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .imagepp {
@@ -39,9 +39,32 @@ body {
     position: absolute;
     top: 620px;
     left: 50%;
-    width: 388px;
+    width: 390px;
     height: 190px;
     transform: translate(-50%, -50%);
+  }
+  .Etape2 {
+    position: absolute;
+    top: 770px;
+    left: 50%;
+    width: 390px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    opacity: 80%;
+  }
+  .Etape3 {
+    position: absolute;
+    top: 830px;
+    left: 50%;
+    width: 390px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    opacity: 70%;
+  }
+
+  .fond {
+    position: absolute;
+    top: 1000px;
   }
 
   .imagepp {
@@ -158,5 +181,38 @@ body {
     height: 5px;
     background-color: black;
     margin: 6px 0;
+  }
+  .btn {
+    background-color: #1c569d;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex; /* Utiliser inline-flex pour aligner les éléments */
+    align-items: center;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+    position: absolute;
+    top: 880px;
+    left: 15px;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    color: #ffffff; /* Changer la couleur du texte au survol */
+  }
+
+  .btn img {
+    order: 2; /* Change l'ordre de l'image pour qu'elle soit après le texte */
+    margin-left: 5px; /* Espace entre le texte et l'image */
+  }
+
+  .btn span {
+    order: 1; /* Change l'ordre du texte pour qu'il soit avant l'image */
   }
 }
