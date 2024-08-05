@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title class="titre">Recette</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="image/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="image/favicon-16x16.png"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="image/OIG3.jpg" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="image/OIG3.jpg" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/path/to/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/path/to/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/path/to/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/path/to/apple-icon-180x180.png"
+    />
+
+    <!-- Android Icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/path/to/android-icon-192x192.png"
+    />
+
+    <!-- JavaScript Files -->
+    <script src="recette.js"></script>
+  </head>
+
+  <body>
+    <!-- Title and Images -->
+    <div class="Titlepp">Original American Cookies de Mike</div>
+    <div class="carre3"></div>
+    <img src="image/21945_w600 2.png" alt="" class="imagepp" />
+    <img src="Image/IMG_1334.jpg" alt="" class="Etape1" />
+    <img src="Image/IMG_1335.jpg" alt="" class="Etape2" />
+    <img src="Image/IMG_1336.jpg" alt="" class="Etape3" />
+
+    <!-- Search Bar -->
+    <input
+      type="search"
+      id="search"
+      onchange="ouvrirPage()"
+      class="search"
+      placeholder="Rechercher une recette"
+    />
+    <input
+      type="button"
+      id="button"
+      onclick="ouvrirPage()"
+      class="Rechercher"
+    />
+
+    <!-- Search Icon -->
+    <img
+      src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
+      alt=""
+      class="iconesearch"
+    />
+
+    <!-- Sidenav -->
+    <div id="mySidenav" class="sidenav">
+      <a id="closeBtn" href="#" class="close">×</a>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">frrgrgrgrgr</a></li>
+        <li><a href="#">Témoignages</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Burger Menu Icon -->
+    <a href="#" id="openBtn">
+      <span class="burger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </a>
+
+    <!-- Star Ratings -->
+    <div class="star">
+      <img src="Image/star_filled-1.png" alt="Star 1" />
+      <img src="Image/star_filled-2.png" alt="Star 2" />
+      <img src="Image/star_filled-3.png" alt="Star 3" />
+      <img src="Image/star_filled.png" alt="Star 4" />
+      <img src="Image/star.png" alt="Star 5" />
+    </div>
+
+    <!-- Background -->
+    <div class="fond">x</div>
+
+    <!-- More Details Button -->
+    <a href="index2.html">
+      <button class="btn" h>
+        <img
+          src="Image/icons8-chargement-de-points-32.png"
+          alt="Icon"
+          width="20"
+          height="20"
+        />
+        Voir plus de détails
+      </button>
+    </a>
+    <!-- JavaScript Functions -->
+    <script>
+      function ouvrirPage() {
+        var a = document.getElementById("search").value.toLowerCase();
+        console.log("Valeur entrée :", a); // Ajout d'un message de débogage
+
+        if (a === "chat") {
+          console.log("Recherche 'chat' détectée"); // Ajout d'un message de débogage
+          window.location.href =
+            "https://www.google.com/search?client=opera&q=api+recette+de+cuisine&sourceid=opera&ie=UTF-8&oe=UTF-8";
+        } else if (a === "chien") {
+          console.log("Recherche 'chien' détectée"); // Ajout d'un message de débogage
+          window.location.href = "index2.html";
+        } else {
+          console.log("Recherche par défaut détectée"); // Ajout d'un message de débogage
+          window.location.href = "https://www.youtube.com/";
+        }
+      }
+
+      var sidenav = document.getElementById("mySidenav");
+      var openBtn = document.getElementById("openBtn");
+      var closeBtn = document.getElementById("closeBtn");
+
+      openBtn.onclick = openNav;
+      closeBtn.onclick = closeNav;
+
+      /* Set the width of the side navigation to 250px */
+      function openNav() {
+        sidenav.classList.add("active");
+      }
+
+      /* Set the width of the side navigation to 0 */
+      function closeNav() {
+        sidenav.classList.remove("active");
+      }
+    </script>
+  </body>
+</html>

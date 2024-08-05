@@ -1,0 +1,218 @@
+body {
+  background-color: rgba(254, 254, 254, 0.931);
+  overflow-x: hidden;
+}
+
+.imagepp {
+  left: 10%;
+  position: absolute;
+  top: 30%;
+  height: 420px;
+  width: 700px;
+}
+
+@media all and (max-width: 800px) {
+  .Titlepp {
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 32px;
+    text-align: center;
+    top: 120px;
+    position: absolute;
+  }
+  .star {
+    display: flex;
+    position: absolute;
+    top: 450px;
+    left: 37px;
+  }
+
+  .star img {
+    margin-right: -3px; /* Espace entre les étoiles, ajustez selon vos besoins */
+    height: 35px; /* Ajustez la hauteur pour assurer que toutes les étoiles sont de la même taille */
+    width: auto; /* Assurez-vous que les proportions des images sont maintenues */
+  }
+  .Etape1 {
+    position: absolute;
+    top: 620px;
+    left: 50%;
+    width: 390px;
+    height: 190px;
+    transform: translate(-50%, -50%);
+  }
+  .Etape2 {
+    position: absolute;
+    top: 770px;
+    left: 50%;
+    width: 390px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    opacity: 80%;
+  }
+  .Etape3 {
+    position: absolute;
+    top: 830px;
+    left: 50%;
+    width: 390px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    opacity: 70%;
+  }
+
+  .fond {
+    position: absolute;
+    top: 1000px;
+  }
+
+  .imagepp {
+    position: absolute;
+
+    height: 202px;
+    width: 340px;
+    position: absolute;
+    top: 330px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .carre3 {
+    background-color: #1c569d;
+    height: 40px;
+    width: 190px;
+    right: 10px;
+    position: absolute;
+    border-radius: 100px;
+    top: 20px;
+  }
+  input::placeholder {
+    color: rgb(255, 255, 255); /* Couleur du texte du placeholder */
+    left: 8px;
+    position: absolute;
+  }
+  .iconesearch {
+    width: 40px;
+    height: 40px;
+    right: 210px;
+    position: absolute;
+    top: 20px;
+  }
+  .Rechercher {
+    width: 40px;
+    height: 40px;
+    right: 210px;
+    position: absolute;
+    top: 20px;
+    z-index: 10;
+    opacity: 0%;
+  }
+  .search {
+    background-color: #1c569d;
+    height: 40px;
+    width: 190px;
+    right: 10px;
+    position: absolute;
+    border-radius: 100px;
+    border: #e8e8e800;
+    border: none;
+    top: 20px;
+    color: white;
+  }
+
+  /* Sidenav menu */
+  .sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -250px;
+    background-color: #e8e8e8;
+    padding-top: 60px;
+    transition: left 0.5s ease;
+  }
+
+  /* Sidenav menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidenav a:hover {
+    color: #111;
+  }
+
+  .sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Active class */
+  .sidenav.active {
+    left: 0;
+  }
+
+  /* Close btn */
+  .sidenav .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    cursor: pointer;
+  }
+
+  /* Icône burger */
+  .burger-icon {
+    position: absolute;
+    top: 20px; /* Déplace l'icône burger vers le bas */
+    left: 20px; /* Positionne l'icône burger à gauche */
+    cursor: pointer;
+  }
+
+  .burger-icon span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+  }
+  .btn {
+    background-color: #1c569d;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex; /* Utiliser inline-flex pour aligner les éléments */
+    align-items: center;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+    position: absolute;
+    top: 880px;
+    left: 15px;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    color: #ffffff; /* Changer la couleur du texte au survol */
+  }
+
+  .btn img {
+    order: 2; /* Change l'ordre de l'image pour qu'elle soit après le texte */
+    margin-left: 5px; /* Espace entre le texte et l'image */
+  }
+
+  .btn span {
+    order: 1; /* Change l'ordre du texte pour qu'il soit avant l'image */
+  }
+}
