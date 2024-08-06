@@ -26,10 +26,22 @@ body {
   .star {
     display: flex;
     position: absolute;
-    top: 450px;
-    left: 37px;
+    top: 690px;
+    left: 33px;
   }
-
+  .textlog {
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    left: 19px;
+    top: 170px;
+  }
+  .imagelog {
+    left: 0px;
+    position: absolute;
+    width: 400px;
+    top: 130px;
+  }
   .star img {
     margin-right: -3px; /* Espace entre les étoiles, ajustez selon vos besoins */
     height: 35px; /* Ajustez la hauteur pour assurer que toutes les étoiles sont de la même taille */
@@ -73,9 +85,21 @@ body {
     height: 202px;
     width: 340px;
     position: absolute;
-    top: 330px;
+    top: 546px;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+  .New {
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 32px;
+    text-align: center;
+    top: 376px;
+    position: absolute;
+    left: 32px;
   }
   .carre3 {
     background-color: #1c569d;
