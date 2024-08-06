@@ -66,6 +66,16 @@
   </head>
 
   <body>
+    <!-- Loader -->
+    <div id="loading" class="loading">
+      <img
+        src="Image/icons8-bouillie (1).gif"
+        alt="Chargement..."
+        width="50"
+        height="50"
+      />
+    </div>
+
     <!-- Title and Images -->
     <div class="Titlepp">Original American Cookies de Mike</div>
     <div class="carre3"></div>
@@ -175,6 +185,15 @@
       function closeNav() {
         sidenav.classList.remove("active");
       }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var loading = document.getElementById("loading");
+        loading.style.display = "flex";
+        setTimeout(function () {
+          loading.style.display = "none";
+        }, 3000);
+      });
     </script>
   </body>
 </html>
