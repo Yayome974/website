@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title class="titre">Recette de Cookies</title>
 
+    <!-- Link to Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
     <!-- CSS Files -->
     <link rel="stylesheet" href="Style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,107 +64,34 @@
       href="/path/to/android-icon-192x192.png"
     />
 
+    <!-- Meta Tags for Mobile Web Apps -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
     <!-- JavaScript Files -->
     <script src="recette.js"></script>
   </head>
 
   <body>
-    <!-- Title and Images -->
+    <!-- Your existing content -->
 
-    <div class="carre3"></div>
-    <img src="21945_w600 2.png" alt="" class="imagepp" />
-    <img src="Image/Design sans titre (2) 1.png" alt="" class="imagelog" />
-    <img
-      src="Image/Des milliers de recette, une inspiration sans fin et plus encore..png"
-      alt=""
-      class="textlog"
-    />
-    <div class="New">Nouveauté :</div>
-    <!-- Search Bar -->
-    <input
-      type="search"
-      id="search"
-      onchange="ouvrirPage()"
-      class="search"
-      placeholder="Rechercher une recette"
-    />
-    <input
-      type="button"
-      id="button"
-      onclick="ouvrirPage()"
-      class="Rechercher"
-    />
-
-    <!-- Search Icon -->
-    <img
-      src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
-      alt=""
-      class="iconesearch"
-    />
-
-    <!-- Sidenav -->
-    <div id="mySidenav" class="sidenav">
-      <a id="closeBtn" href="#" class="close">×</a>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li>
-          <a href="https://yayome974.github.io/website/index1.html"
-            >frrgrgrgrgr</a
-          >
-        </li>
-        <li><a href="#">Témoignages</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Burger Menu Icon -->
-    <a href="#" id="openBtn">
-      <span class="burger-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-    </a>
-
-    <!-- Star Ratings -->
-    <div class="star">
-      <img src="Image/star_filled-1.png" alt="Star 1" />
-      <img src="Image/star_filled-2.png" alt="Star 2" />
-      <img src="Image/star_filled-3.png" alt="Star 3" />
-      <img src="Image/star_filled.png" alt="Star 4" />
-      <img src="Image/star.png" alt="Star 5" />
-    </div>
-
-    <!-- Background -->
-    <div class="fond">x</div>
-
-    <!-- More Details Button -->
-    <a href="index2.html">
-      <button class="btn" h>
-        <img
-          src="Image/icons8-chargement-de-points-32.png"
-          alt="Icon"
-          width="20"
-          height="20"
-        />
-        Voir plus de détails
-      </button>
-    </a>
     <!-- JavaScript Functions -->
     <script>
       function ouvrirPage() {
         var a = document.getElementById("search").value.toLowerCase();
-        console.log("Valeur entrée :", a); // Ajout d'un message de débogage
+        console.log("Valeur entrée :", a);
 
         if (a === "chat") {
-          console.log("Recherche 'chat' détectée"); // Ajout d'un message de débogage
+          console.log("Recherche 'chat' détectée");
           window.location.href =
             "https://www.google.com/search?client=opera&q=api+recette+de+cuisine&sourceid=opera&ie=UTF-8&oe=UTF-8";
         } else if (a === "chien") {
-          console.log("Recherche 'chien' détectée"); // Ajout d'un message de débogage
+          console.log("Recherche 'chien' détectée");
           window.location.href = "index2.html";
         } else {
-          console.log("Recherche par défaut détectée"); // Ajout d'un message de débogage
+          console.log("Recherche par défaut détectée");
           window.location.href = "https://www.youtube.com/";
         }
       }
@@ -173,12 +103,10 @@
       openBtn.onclick = openNav;
       closeBtn.onclick = closeNav;
 
-      /* Set the width of the side navigation to 250px */
       function openNav() {
         sidenav.classList.add("active");
       }
 
-      /* Set the width of the side navigation to 0 */
       function closeNav() {
         sidenav.classList.remove("active");
       }
