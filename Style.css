@@ -3,11 +3,6 @@ body {
   overflow-x: hidden;
   max-width: 100%;
 }
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 .imagepp {
   left: 10%;
@@ -337,6 +332,9 @@ input::placeholder {
     top: 850px;
     width: 100%;
     border-radius: 10px;
+    padding-bottom: 47px; /* Ajouter du padding pour l'espace */
+    box-sizing: border-box; /* Assurez-vous que le padding est inclus dans la largeur totale */
+    left: 0px;
   }
   .horizontal-scroll-container img {
     height: 120px; /* Adjust the height as needed */
@@ -344,6 +342,21 @@ input::placeholder {
     margin-right: 10px; /* Space between images */
     border-radius: 10px;
   }
+  .d {
+    color: #000000;
+    text-align: center;
+    position: absolute;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 13px;
+    text-align: center;
+    top: 120px;
+    left: 33px;
+  }
+
   .New {
     font-family: "Noto Serif", serif;
     font-optical-sizing: auto;
