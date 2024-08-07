@@ -3,6 +3,11 @@ body {
   overflow-x: hidden;
   max-width: 100%;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 .imagepp {
   left: 10%;
@@ -38,7 +43,7 @@ body {
 .imagelog {
   left: 0px;
   position: absolute;
-
+  height: auto;
   top: 130px;
   max-width: 100%;
 }
