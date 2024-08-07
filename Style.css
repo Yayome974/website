@@ -38,8 +38,9 @@ body {
 .imagelog {
   left: 0px;
   position: absolute;
-  width: 400px;
+
   top: 130px;
+  max-width: 100%;
 }
 .star img {
   margin-right: -3px; /* Espace entre les étoiles, ajustez selon vos besoins */
