@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(254, 254, 254, 0.931);
+  background-color: rgba(255, 255, 255, 0.931);
   overflow-x: hidden;
   max-width: 100%;
 }
@@ -35,9 +35,9 @@ body {
 }
 .textlog {
   text-align: center;
-  z-index: 1000;
+
   position: absolute;
-  left: 19px;
+  left: 2221px;
   top: 170px;
 }
 .imagelog {
@@ -59,24 +59,6 @@ body {
   width: 390px;
   height: 190px;
   transform: translate(-50%, -50%);
-}
-.Etape2 {
-  position: absolute;
-  top: 770px;
-  left: 50%;
-  width: 390px;
-  height: 60px;
-  transform: translate(-50%, -50%);
-  opacity: 80%;
-}
-.Etape3 {
-  position: absolute;
-  top: 830px;
-  left: 50%;
-  width: 390px;
-  height: 60px;
-  transform: translate(-50%, -50%);
-  opacity: 70%;
 }
 
 .fond {
@@ -154,7 +136,7 @@ input::placeholder {
   height: 100%;
   width: 250px;
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   top: 0;
   left: -250px;
   background-color: #e8e8e8;
@@ -312,6 +294,30 @@ input::placeholder {
     position: absolute;
     top: 1000px;
   }
+  .prix {
+    top: 693px;
+    left: 260px;
+    position: absolute;
+  }
+  .temps {
+    height: 35px;
+    width: 35px;
+    top: 743px;
+    left: 33px;
+    position: absolute;
+  }
+  .time {
+    top: 757px;
+    left: 73px;
+    position: absolute;
+  }
+  .euro {
+    height: 35px;
+    width: 35px;
+    top: 683px;
+    left: 220px;
+    position: absolute;
+  }
 
   .imagepp {
     position: absolute;
@@ -439,24 +445,6 @@ input::placeholder {
     height: 5px;
     background-color: black;
     margin: 6px 0;
-  }
-  .btn {
-    background-color: #1c569d;
-    border: none;
-    color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-flex; /* Utiliser inline-flex pour aligner les éléments */
-    align-items: center;
-    font-size: 13px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
-    transition: background-color 0.3s, transform 0.3s;
-    position: absolute;
-    top: 880px;
-    left: 15px;
   }
 
   .btn:hover {
