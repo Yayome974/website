@@ -63,7 +63,7 @@ body {
 
 .fond {
   position: absolute;
-  top: 1000px;
+  top: 1700px;
 }
 
 .imagepp {
@@ -328,6 +328,21 @@ input::placeholder {
     top: 546px;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+  .horizontal-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    position: absolute;
+    top: 850px;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .horizontal-scroll-container img {
+    height: 120px; /* Adjust the height as needed */
+    width: auto;
+    margin-right: 10px; /* Space between images */
+    border-radius: 10px;
   }
   .New {
     font-family: "Noto Serif", serif;
