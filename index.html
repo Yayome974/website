@@ -4,12 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title class="titre">Recette</title>
-    
+
     <!-- Meta tags pour le plein écran sur iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="Recette de Cookies" />
-    
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="OIG3.jpg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="OIG3.jpg" />
+    <link rel="icon" type="image/x-icon" href="OIG3.jpg" />
+    <link rel="shortcut icon" href="OIG3.jpg" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="OIG3.jpg" />
+    <link rel="apple-touch-icon" sizes="76x76" href="OIG3.jpg" />
+    <link rel="apple-touch-icon" sizes="120x120" href="OIG3.jpg" />
+    <link rel="apple-touch-icon" sizes="152x152" href="OIG3.jpg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="OIG3.jpg" />
+
+    <!-- Android Icon -->
+    <link rel="icon" type="image/png" sizes="192x192" href="OIG3.jpg" />
+
     <!-- CSS Files -->
     <link rel="stylesheet" href="Style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +34,16 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
     />
-     <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- JavaScript for Fullscreen -->
+    <script>
+      document.documentElement.requestFullscreen();
+    </script>
+  </head>
+
+  <body>
+    <!-- Horizontal Image Scroll Container -->
     <div class="horizontal-scroll-container">
       <img
         src="https://cuisine-addict.com/wp-content/uploads/2019/10/recette-rougail-saucisse.jpg"
@@ -31,37 +56,15 @@
       <img src="Image/21945_w600 2.png" alt="Cookie image" />
       <!-- Add more images as needed -->
     </div>
-   
 
-  
-  <script>
-    document.documentElement.requestFullscreen();
-  </script>
-    <!-- Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="OIG3.jpg" />
-<link rel="icon" type="image/png" sizes="16x16" href="OIG3.jpg" />
-<link rel="icon" type="image/x-icon" href="OIG3.jpg" />
-<link rel="shortcut icon" href="OIG3.jpg" />
-
-<!-- Apple Touch Icons -->
-<link rel="apple-touch-icon" sizes="57x57" href="OIG3.jpg" />
-<link rel="apple-touch-icon" sizes="76x76" href="OIG3.jpg" />
-<link rel="apple-touch-icon" sizes="120x120" href="OIG3.jpg" />
-<link rel="apple-touch-icon" sizes="152x152" href="OIG3.jpg" />
-<link rel="apple-touch-icon" sizes="180x180" href="OIG3.jpg" />
-
-<!-- Android Icon -->
-<link rel="icon" type="image/png" sizes="192x192" href="OIG3.jpg" />
-<!-- JavaScript Files -->
-<script src="recette.js"></script>
-
-  
-<!-- Title and Images -->
+    <!-- Title and Key Images -->
     <img src="Image/euro.png" alt="" class="euro" />
     <div class="prix">économique</div>
     <img src="Image/lhorloge.png" alt="" class="temps" />
     <div class="time">15 minutes</div>
     <div class="carre3"></div>
+
+    <!-- Navigation Links -->
     <a href="https://yayome974.github.io/website/index1.html">
       <img src="21945_w600 2.png" alt="" class="imagepp" />
     </a>
@@ -72,7 +75,9 @@
       class="textlog"
       style="position: absolute; left: 5px"
     />
+
     <div class="New">Nouveauté :</div>
+
     <!-- Search Bar -->
     <input
       type="search"
@@ -87,16 +92,13 @@
       onclick="ouvrirPage()"
       class="Rechercher"
     />
-
-    <!-- Search Icon -->
-
     <img
       src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
       alt=""
       class="iconesearch"
     />
 
-    <!-- Sidenav -->
+    <!-- Side Navigation Menu -->
     <div id="mySidenav" class="sidenav" style="z-index: 10000">
       <a id="closeBtn" href="#" class="close">×</a>
       <ul>
@@ -129,24 +131,27 @@
       <img src="Image/star.png" alt="Star 5" />
     </div>
 
-    <!-- Background -->
+    <!-- Background Element -->
     <div class="fond" style="position: absolute; top: 2000px">x</div>
+
+    <!-- JavaScript Files -->
+    <script src="recette.js"></script>
 
     <!-- JavaScript Functions -->
     <script>
       function ouvrirPage() {
         var a = document.getElementById("search").value.toLowerCase();
-        console.log("Valeur entrée :", a); // Ajout d'un message de débogage
+        console.log("Valeur entrée :", a);
 
         if (a === "chat") {
-          console.log("Recherche 'chat' détectée"); // Ajout d'un message de débogage
+          console.log("Recherche 'chat' détectée");
           window.location.href =
             "https://www.google.com/search?client=opera&q=api+recette+de+cuisine&sourceid=opera&ie=UTF-8&oe=UTF-8";
         } else if (a === "chien") {
-          console.log("Recherche 'chien' détectée"); // Ajout d'un message de débogage
+          console.log("Recherche 'chien' détectée");
           window.location.href = "index2.html";
         } else {
-          console.log("Recherche par défaut détectée"); // Ajout d'un message de débogage
+          console.log("Recherche par défaut détectée");
           window.location.href = "https://www.youtube.com/";
         }
       }
@@ -158,12 +163,10 @@
       openBtn.onclick = openNav;
       closeBtn.onclick = closeNav;
 
-      /* Set the width of the side navigation to 250px */
       function openNav() {
         sidenav.classList.add("active");
       }
 
-      /* Set the width of the side navigation to 0 */
       function closeNav() {
         sidenav.classList.remove("active");
       }
