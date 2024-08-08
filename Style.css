@@ -4,85 +4,129 @@ body {
   max-width: 100%;
 }
 
+/* Main Image */
 .imagepp {
-  left: 10%;
   position: absolute;
-  top: 30%;
-  height: 420px;
-  width: 700px;
+  height: 202px;
+  width: 340px;
+  top: 546px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+/* Title */
 .Titlepp {
   font-family: "Noto Serif", serif;
-  font-optical-sizing: auto;
   font-weight: bold;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
   font-size: 32px;
   text-align: center;
   top: 120px;
   position: absolute;
 }
+
+/* Star Ratings */
 .star {
   display: flex;
   position: absolute;
   top: 690px;
   left: 33px;
 }
+
+.star img {
+  margin-right: -3px;
+  height: 35px;
+  width: auto;
+}
+
+/* Header Text and Logo */
 .textlog {
   text-align: center;
-
   position: absolute;
-  left: 2221px;
   top: 170px;
+  left: 50%;
 }
+
 .imagelog {
-  left: 0px;
   position: absolute;
-  height: auto;
   top: 130px;
+  left: 0px;
   max-width: 100%;
 }
-.star img {
-  margin-right: -3px; /* Espace entre les étoiles, ajustez selon vos besoins */
-  height: 35px; /* Ajustez la hauteur pour assurer que toutes les étoiles sont de la même taille */
-  width: auto; /* Assurez-vous que les proportions des images sont maintenues */
-}
-.Etape1 {
+
+/* Steps */
+.Etape1,
+.Etape2,
+.Etape3 {
   position: absolute;
-  top: 620px;
   left: 50%;
-  width: 390px;
-  height: 190px;
   transform: translate(-50%, -50%);
 }
 
+.Etape1 {
+  top: 620px;
+  width: 390px;
+  height: 190px;
+}
+
+.Etape2,
+.Etape3 {
+  top: 770px;
+  width: 390px;
+  height: 60px;
+  opacity: 80%;
+}
+
+/* Background */
 .fond {
   position: absolute;
   top: 1700px;
 }
 
-.imagepp {
-  position: absolute;
-
-  height: 202px;
-  width: 340px;
-  position: absolute;
-  top: 546px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+/* New Section */
 .New {
   font-family: "Noto Serif", serif;
-  font-optical-sizing: auto;
   font-weight: bold;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
   font-size: 32px;
   text-align: center;
   top: 376px;
   position: absolute;
   left: 32px;
 }
+
+/* Search Bar */
+.search {
+  background-color: #1c569d;
+  height: 40px;
+  width: 190px;
+  right: 10px;
+  position: absolute;
+  border-radius: 100px;
+  border: none;
+  top: 20px;
+  color: white;
+}
+
+input::placeholder {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  left: 8px;
+}
+
+.iconesearch,
+.Rechercher {
+  width: 40px;
+  height: 40px;
+  right: 210px;
+  position: absolute;
+  top: 20px;
+  z-index: 10;
+}
+
+.Rechercher {
+  opacity: 0%;
+}
+
+/* Blue Bar */
 .carre3 {
   background-color: #1c569d;
   height: 40px;
@@ -92,56 +136,22 @@ body {
   border-radius: 100px;
   top: 20px;
 }
-input::placeholder {
-  color: rgb(255, 255, 255); /* Couleur du texte du placeholder */
-  left: 8px;
-  position: absolute;
-}
-.iconesearch {
-  width: 40px;
-  height: 40px;
-  right: 210px;
-  position: absolute;
-  top: 20px;
-}
-.Rechercher {
-  width: 40px;
-  height: 40px;
-  right: 210px;
-  position: absolute;
-  top: 20px;
-  z-index: 10;
-  opacity: 0%;
-}
-.search {
-  background-color: #1c569d;
-  height: 40px;
-  width: 190px;
-  right: 10px;
-  position: absolute;
-  border-radius: 100px;
-  border: #e8e8e800;
-  border: none;
-  top: 20px;
-  color: white;
-}
 
-/* Sidenav menu */
+/* Sidenav Menu */
 .sidenav {
   height: 100%;
   width: 250px;
   position: fixed;
-  z-index: 100;
   top: 0;
   left: -250px;
   background-color: #e8e8e8;
   padding-top: 60px;
   transition: left 0.5s ease;
+  z-index: 100;
 }
 
-/* Sidenav menu links */
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 32px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
@@ -159,12 +169,10 @@ input::placeholder {
   margin: 0;
 }
 
-/* Active class */
 .sidenav.active {
   left: 0;
 }
 
-/* Close btn */
 .sidenav .close {
   position: absolute;
   top: 0;
@@ -173,11 +181,11 @@ input::placeholder {
   cursor: pointer;
 }
 
-/* Icône burger */
+/* Burger Icon */
 .burger-icon {
   position: absolute;
-  top: 20px; /* Déplace l'icône burger vers le bas */
-  left: 20px; /* Positionne l'icône burger à gauche */
+  top: 20px;
+  left: 20px;
   cursor: pointer;
 }
 
@@ -188,14 +196,15 @@ input::placeholder {
   background-color: black;
   margin: 6px 0;
 }
+
+/* Button */
 .btn {
   background-color: #1c569d;
   border: none;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   padding: 10px 20px;
   text-align: center;
-  text-decoration: none;
-  display: inline-flex; /* Utiliser inline-flex pour aligner les éléments */
+  display: inline-flex;
   align-items: center;
   font-size: 13px;
   margin: 4px 2px;
@@ -210,283 +219,98 @@ input::placeholder {
 .btn:hover {
   background-color: #0056b3;
   transform: scale(1.05);
-  color: #ffffff; /* Changer la couleur du texte au survol */
 }
 
 .btn img {
-  order: 2; /* Change l'ordre de l'image pour qu'elle soit après le texte */
-  margin-left: 5px; /* Espace entre le texte et l'image */
+  margin-left: 5px;
 }
 
-.btn span {
-  order: 1; /* Change l'ordre du texte pour qu'il soit avant l'image */
+.textlog {
+  left: 19px;
+  z-index: 1000;
 }
 
-@media all and (max-width: 800px) {
-  .Titlepp {
-    font-family: "Noto Serif", serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-    font-size: 32px;
-    text-align: center;
-    top: 120px;
-    position: absolute;
-  }
-  .star {
-    display: flex;
-    position: absolute;
-    top: 690px;
-    left: 33px;
-  }
-  .textlog {
-    text-align: center;
-    z-index: 1000;
-    position: absolute;
-    left: 19px;
-    top: 170px;
-  }
-  .imagelog {
-    left: 0px;
-    position: absolute;
-    width: 400px;
-    top: 130px;
-  }
-  .star img {
-    margin-right: -3px; /* Espace entre les étoiles, ajustez selon vos besoins */
-    height: 35px; /* Ajustez la hauteur pour assurer que toutes les étoiles sont de la même taille */
-    width: auto; /* Assurez-vous que les proportions des images sont maintenues */
-  }
-  .Etape1 {
-    position: absolute;
-    top: 620px;
-    left: 50%;
-    width: 390px;
-    height: 190px;
-    transform: translate(-50%, -50%);
-  }
-  .Etape2 {
-    position: absolute;
-    top: 770px;
-    left: 50%;
-    width: 390px;
-    height: 60px;
-    transform: translate(-50%, -50%);
-    opacity: 80%;
-  }
-  .Etape3 {
-    position: absolute;
-    top: 830px;
-    left: 50%;
-    width: 390px;
-    height: 60px;
-    transform: translate(-50%, -50%);
-    opacity: 70%;
-  }
+.imagelog {
+  width: 400px;
+}
+.d {
+  color: #000000;
+  text-align: center;
+  position: absolute;
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 13px;
+  text-align: center;
+  top: 120px;
+  left: 33px;
+}
 
-  .fond {
-    position: absolute;
-    top: 1000px;
-  }
-  .prix {
-    top: 693px;
-    left: 260px;
-    position: absolute;
-  }
-  .temps {
-    height: 35px;
-    width: 35px;
-    top: 743px;
-    left: 33px;
-    position: absolute;
-  }
-  .time {
-    top: 757px;
-    left: 73px;
-    position: absolute;
-  }
-  .euro {
-    height: 35px;
-    width: 35px;
-    top: 683px;
-    left: 220px;
-    position: absolute;
-  }
+.fond {
+  top: 1000px;
+}
 
-  .imagepp {
-    position: absolute;
+.prix {
+  top: 693px;
+  left: 260px;
+  position: absolute;
+}
 
-    height: 202px;
-    width: 340px;
-    position: absolute;
-    top: 546px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .horizontal-scroll-container {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    position: absolute;
-    top: 850px;
-    width: 100%;
-    border-radius: 10px;
-    padding-bottom: 50px; /* Ajouter du padding pour l'espace */
-    box-sizing: border-box; /* Assurez-vous que le padding est inclus dans la largeur totale */
-    left: 0px;
-  }
-  .horizontal-scroll-container img {
-    height: 120px; /* Adjust the height as needed */
-    width: auto;
-    margin-right: 10px; /* Space between images */
-    border-radius: 10px;
-  }
-  .d {
-    color: #000000;
-    text-align: center;
-    position: absolute;
-    font-family: "Noto Serif", serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-    font-size: 13px;
-    text-align: center;
-    top: 120px;
-    left: 33px;
-  }
+.temps {
+  height: 35px;
+  width: 35px;
+  top: 743px;
+  left: 33px;
+  position: absolute;
+}
 
-  .New {
-    font-family: "Noto Serif", serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-    font-size: 32px;
-    text-align: center;
-    top: 376px;
-    position: absolute;
-    left: 32px;
-  }
-  .carre3 {
-    background-color: #1c569d;
-    height: 40px;
-    width: 190px;
-    right: 10px;
-    position: absolute;
-    border-radius: 100px;
-    top: 20px;
-  }
-  input::placeholder {
-    color: rgb(255, 255, 255); /* Couleur du texte du placeholder */
-    left: 8px;
-    position: absolute;
-  }
-  .iconesearch {
-    width: 40px;
-    height: 40px;
-    right: 210px;
-    position: absolute;
-    top: 20px;
-  }
-  .Rechercher {
-    width: 40px;
-    height: 40px;
-    right: 210px;
-    position: absolute;
-    top: 20px;
-    z-index: 10;
-    opacity: 0%;
-  }
-  .search {
-    background-color: #1c569d;
-    height: 40px;
-    width: 190px;
-    right: 10px;
-    position: absolute;
-    border-radius: 100px;
-    border: #e8e8e800;
-    border: none;
-    top: 20px;
-    color: white;
-  }
+.time {
+  top: 757px;
+  left: 73px;
+  position: absolute;
+}
 
-  /* Sidenav menu */
-  .sidenav {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: -250px;
-    background-color: #e8e8e8;
-    padding-top: 60px;
-    transition: left 0.5s ease;
-  }
+.euro {
+  height: 35px;
+  width: 35px;
+  top: 683px;
+  left: 220px;
+  position: absolute;
+}
 
-  /* Sidenav menu links */
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
+.horizontal-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  position: absolute;
+  top: 850px;
+  width: 100%;
+  border-radius: 10px;
+  padding-bottom: 47px;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  left: 8px;
+}
 
-  .sidenav a:hover {
-    color: #111;
-  }
+.horizontal-scroll-container img {
+  height: 120px;
+  margin-right: 10px;
+  border-radius: 10px;
+  width: 190px;
+}
 
-  .sidenav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
+.New {
+  top: 376px;
+  left: 32px;
+}
 
-  /* Active class */
-  .sidenav.active {
-    left: 0;
-  }
+.Rechercher {
+  z-index: 10;
+  opacity: 0%;
+}
 
-  /* Close btn */
-  .sidenav .close {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    cursor: pointer;
-  }
-
-  /* Icône burger */
-  .burger-icon {
-    position: absolute;
-    top: 20px; /* Déplace l'icône burger vers le bas */
-    left: 20px; /* Positionne l'icône burger à gauche */
-    cursor: pointer;
-  }
-
-  .burger-icon span {
-    display: block;
-    width: 35px;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
-  }
-
-  .btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-    color: #ffffff; /* Changer la couleur du texte au survol */
-  }
-
-  .btn img {
-    order: 2; /* Change l'ordre de l'image pour qu'elle soit après le texte */
-    margin-left: 5px; /* Espace entre le texte et l'image */
-  }
-
-  .btn span {
-    order: 1; /* Change l'ordre du texte pour qu'il soit avant l'image */
-  }
+.search {
+  width: 190px;
 }
