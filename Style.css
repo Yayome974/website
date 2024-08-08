@@ -44,6 +44,7 @@ body {
   position: absolute;
   top: 170px;
   left: 50%;
+  max-width: 100%;
 }
 
 .imagelog {
@@ -282,11 +283,13 @@ input::placeholder {
 
 .horizontal-scroll-container {
   display: flex;
-  overflow-x: auto;
+  overflow-x: auto; /* Permet le défilement si nécessaire, mais pas de dépassement */
   white-space: nowrap;
   position: absolute;
   top: 850px;
-  width: 100%;
+  width: calc(
+    100% - 16px
+  ); /* Limite à la largeur de la page, en prenant en compte les marges */
   border-radius: 10px;
   padding-bottom: 47px;
   box-sizing: border-box;
@@ -294,6 +297,7 @@ input::placeholder {
   left: 8px;
 }
 
+/* Assurer que les images ne provoquent pas de débordement */
 .horizontal-scroll-container img {
   height: 120px;
   margin-right: 10px;
