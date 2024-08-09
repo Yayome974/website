@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ma liste de course</title>
+    <style>
+      @media all and (max-width: 839px) {
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+          background-color: #fafafa;
+        }
+
+        h1 {
+          color: #333;
+          top: 80px;
+          position: absolute;
+          right: -67px;
+          transform: translate(-50%, -50%);
+        }
+
+        input[type="text"] {
+          width: 100%;
+          max-width: 300px;
+          padding: 12px 20px;
+          border: 1px solid #ccc;
+          border-radius: 20px;
+          background-color: #fff;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          font-size: 16px;
+          transition: all 0.3s ease;
+          outline: none;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          top: 208px;
+        }
+
+        input[type="text"]::placeholder {
+          color: #a9a9a9;
+        }
+
+        input[type="text"]:focus {
+          border-color: #6200ea;
+          box-shadow: 0 4px 8px rgba(98, 0, 234, 0.2);
+        }
+
+        button {
+          padding: 10px 20px;
+          background-color: #6200ea;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: bold;
+          opacity: 0%;
+          top: 100000px;
+          position: absolute;
+        }
+
+        button:hover {
+          background-color: #4500b0;
+        }
+
+        .checkbox-container {
+          margin-top: 250px;
+          margin-left: 2px;
+        }
+
+        .checkbox-item {
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+          margin-right: 15px;
+          transform: scale(1.7); /* Agrandir la case à cocher */
+          background-color: #1c569d;
+        }
+        .checkbox-item label {
+          font-size: 20px; /* Agrandir le texte du label */
+        }
+        .iconesearch,
+        .Rechercher {
+          width: 40px;
+          height: 40px;
+          right: 210px;
+          position: absolute;
+          top: 20px;
+          z-index: 10;
+        }
+
+        .Rechercher {
+          opacity: 0%;
+        }
+        input::placeholder {
+          color: rgb(255, 255, 255);
+          position: absolute;
+          left: 8px;
+        }
+        .search {
+          background-color: #1c569d;
+          height: 40px;
+          width: 190px;
+          right: 10px;
+          position: absolute;
+          border-radius: 100px;
+          border: none;
+          top: 20px;
+          color: white;
+        }
+        .sidenav {
+          height: 100%;
+          width: 250px;
+          position: fixed;
+          top: 0;
+          left: -250px;
+          background-color: #e8e8e8;
+          padding-top: 60px;
+          transition: left 0.5s ease;
+          z-index: 100;
+        }
+
+        .sidenav a {
+          padding: 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+          color: #111;
+        }
+
+        .sidenav ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .sidenav.active {
+          left: 0;
+        }
+
+        .sidenav .close {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          cursor: pointer;
+        }
+
+        /* Burger Icon */
+        .burger-icon {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          cursor: pointer;
+        }
+
+        .burger-icon span {
+          display: block;
+          width: 35px;
+          height: 5px;
+          background-color: black;
+          margin: 6px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ma liste de course</h1>
+    <!-- Search Bar -->
+    <input
+      type="search"
+      id="search"
+      onchange="ouvrirPage()"
+      class="search"
+      placeholder="Rechercher une recette"
+    />
+    <input
+      type="button"
+      id="button"
+      onclick="ouvrirPage()"
+      class="Rechercher"
+    />
+    <img
+      src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
+      alt=""
+      class="iconesearch"
+    />
+
+    <!-- Side Navigation Menu -->
+    <div id="mySidenav" class="sidenav" style="z-index: 10000">
+      <a id="closeBtn" href="#" class="close">×</a>
+      <ul>
+        <li>
+          <a href="https://yayome974.github.io/website/index.html">Accueil</a>
+        </li>
+        <li>
+          <a href="https://yayome974.github.io/website/index1.html">Recette</a>
+        </li>
+        <li><a href="#">liste de course</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Burger Menu Icon -->
+    <div id="openBtn">
+      <span class="burger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+    <label for="new-checkbox" class="labeli"></label>
+    <input type="text" id="new-checkbox" placeholder="Entrez un nom" />
+    <button id="add-checkbox">Ajouter</button>
+
+    <div class="checkbox-container" id="checkbox-container">
+      <!-- Les cases à cocher seront ajoutées ici -->
+    </div>
+
+    <script>
+      function addCheckbox() {
+        const checkboxContainer = document.getElementById("checkbox-container");
+        const newCheckboxName = document.getElementById("new-checkbox").value;
+
+        if (newCheckboxName.trim() !== "") {
+          // Créer un div pour contenir la checkbox et son label
+          const checkboxItem = document.createElement("div");
+          checkboxItem.className = "checkbox-item";
+
+          // Créer la checkbox
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.id = newCheckboxName;
+          checkbox.name = newCheckboxName;
+
+          // Créer le label pour la checkbox
+          const label = document.createElement("label");
+          label.htmlFor = newCheckboxName;
+          label.textContent = newCheckboxName;
+
+          // Ajouter la checkbox et le label au div container
+          checkboxItem.appendChild(checkbox);
+          checkboxItem.appendChild(label);
+
+          // Ajouter le div container à l'élément parent
+          checkboxContainer.appendChild(checkboxItem);
+
+          // Réinitialiser le champ de texte
+          document.getElementById("new-checkbox").value = "";
+        }
+      }
+
+      document
+        .getElementById("add-checkbox")
+        .addEventListener("click", addCheckbox);
+
+      // Ajout de la fonctionnalité pour détecter la touche "Entrée"
+      document
+        .getElementById("new-checkbox")
+        .addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            addCheckbox();
+            event.preventDefault(); // Empêche le comportement par défaut de soumission de formulaire
+          }
+        });
+
+      function ouvrirPage() {
+        var a = document.getElementById("search").value.toLowerCase();
+        console.log("Valeur entrée :", a);
+
+        if (a === "chat") {
+          console.log("Recherche 'chat' détectée");
+          window.location.href =
+            "https://www.google.com/search?client=opera&q=api+recette+de+cuisine&sourceid=opera&ie=UTF-8&oe=UTF-8";
+        } else if (a === "chien") {
+          console.log("Recherche 'chien' détectée");
+          window.location.href = "index2.html";
+        } else {
+          console.log("Recherche par défaut détectée");
+          window.location.href = "https://www.youtube.com/";
+        }
+      }
+
+      var sidenav = document.getElementById("mySidenav");
+      var openBtn = document.getElementById("openBtn");
+      var closeBtn = document.getElementById("closeBtn");
+
+      openBtn.onclick = openNav;
+      closeBtn.onclick = closeNav;
+
+      function openNav() {
+        sidenav.classList.add("active");
+      }
+
+      function closeNav() {
+        sidenav.classList.remove("active");
+      }
+    </script>
+  </body>
+</html>
