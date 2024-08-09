@@ -1,9 +1,10 @@
 body {
   background-color: rgba(254, 254, 254, 0.931);
-  overflow-x: hidden;
-   width: 100%;
-      height: 100%;
-      margin: 0;
+  overflow-x: hidden; /* Déjà en place */
+  max-width: 100%;
+  margin: 0; /* Pour éviter les marges par défaut */
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .imagepp {
@@ -42,7 +43,7 @@ body {
     position: absolute;
     top: 620px;
     left: 50%;
-    width: 390px;
+    max-width: 100%;
     height: 190px;
     transform: translate(-50%, -50%);
   }
@@ -50,7 +51,7 @@ body {
     position: absolute;
     top: 770px;
     left: 50%;
-    width: 390px;
+    max-width: 100%;
     height: 60px;
     transform: translate(-50%, -50%);
     opacity: 100%;
@@ -59,7 +60,7 @@ body {
     position: absolute;
     top: 830px;
     left: 50%;
-    width: 390px;
+    max-width: 100%;
     height: 60px;
     transform: translate(-50%, -50%);
     opacity: 100%;
