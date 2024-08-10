@@ -64,7 +64,6 @@
     />
 
     <!-- JavaScript Files -->
-    <script src="recette.js"></script>
   </head>
 
   <body>
@@ -161,6 +160,14 @@
       </button>
     </a>
     <!-- JavaScript Functions -->
-    <script src="script.js"></script>
+    <script src="script.js">
+      document.addEventListener("DOMContentLoaded", function () {
+            var loading = document.getElementById("loading");
+            loading.style.display = "flex";
+            setTimeout(function () {
+              loading.style.display = "none";
+            }, 3000);
+          });
+    </script>
   </body>
 </html>
