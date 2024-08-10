@@ -1,12 +1,18 @@
 body {
   background-color: rgba(255, 255, 255, 0.931);
   overflow-x: none; /*pour supprimer le defilement horizontal*/
+  overflow-x: smooth;
   max-width: 100%;
   margin: 0; /* Pour éviter les marges par défaut */
   padding: 0;
   box-sizing: border-box;
 }
-
+.container {
+  display: none;
+}
+#mycheckbox:checked ~ .container {
+  display: block;
+}
 /* Main Image */
 .imagepp {
   position: absolute;
@@ -292,6 +298,7 @@ input::placeholder {
   display: flex;
   overflow-x: auto; /* Permet le défilement si nécessaire, mais pas de dépassement */
   white-space: nowrap;
+  overflow-x: smooth;
   position: absolute;
   top: 850px;
   width: calc(
