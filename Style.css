@@ -296,22 +296,26 @@ input::placeholder {
 
 .horizontal-scroll-container {
   display: flex;
-  overflow-x: auto; /* Permet le défilement si nécessaire, mais pas de dépassement */
+  overflow-x: auto; /* Permet le défilement */
   white-space: nowrap;
-  overflow-x: smooth;
   position: absolute;
   top: 850px;
-  width: calc(
-    100% - 16px
-  ); /* Limite à la largeur de la page, en prenant en compte les marges */
+  width: calc(100% - 16px);
   border-radius: 10px;
   padding-bottom: 47px;
   box-sizing: border-box;
   overflow-y: hidden;
   left: 8px;
+
+  /* Masquer la barre de défilement */
+  scrollbar-width: none; /* Pour Firefox */
+  -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
 }
 
-/* Assurer que les images ne provoquent pas de débordement */
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none; /* Pour Chrome, Safari et Opera */
+}
+
 .horizontal-scroll-container img {
   height: 120px;
   margin-right: 10px;
