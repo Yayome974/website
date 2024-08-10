@@ -46,17 +46,18 @@
           box-shadow: 0 4px 8px rgba(98, 0, 234, 0.2);
         }
 
-        button {
-          padding: 10px 20px;
+        .btncancel {
+          padding: 15px 20px;
           background-color: #6200ea;
           color: #fff;
           border: none;
-          border-radius: 5px;
+          border-radius: 100px;
           cursor: pointer;
           font-weight: bold;
-          opacity: 0%;
-          top: 100000px;
+          opacity: 100%;
+          top: 186px;
           position: absolute;
+          right: 25px;
         }
 
         button:hover {
@@ -215,8 +216,14 @@
     </div>
     <label for="new-checkbox" class="labeli"></label>
     <input type="text" id="new-checkbox" placeholder="Entrez un nom" />
-    <button id="add-checkbox">Ajouter</button>
-    <button id="undo-checkbox">Annuler la dernière tâche</button> <!-- Nouveau bouton -->
+    <button
+      id="add-checkbox"
+      style="z-index: -10; position: absolute; right: 20px; top: 23px"
+    >
+      Ajouter
+    </button>
+    <button id="undo-checkbox" class="btncancel">Annuler</button>
+    <!-- Nouveau bouton -->
 
     <div class="checkbox-container" id="checkbox-container">
       <!-- Les cases à cocher seront ajoutées ici -->
@@ -255,7 +262,7 @@
 
       function undoLastCheckbox() {
         if (lastCheckboxItem) {
-          lastCheckboxItem.remove(); 
+          lastCheckboxItem.remove();
           lastCheckboxItem = null;
         }
       }
@@ -273,7 +280,7 @@
         .addEventListener("keydown", function (event) {
           if (event.key === "Enter") {
             addCheckbox();
-            event.preventDefault(); 
+            event.preventDefault();
           }
         });
 
