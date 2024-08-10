@@ -296,13 +296,78 @@ function addCheckbox() {
 
     // Mise à jour du prix total en fonction du nom de la tâche
     if (newCheckboxName === "oeufs") {
-      totalPrice += 1.19;
-    } if (newCheckboxName === "pain") {
-      totalPrice += 2.00;
-    }
-    if (newCheckboxName === "fromage blanc") {
-      totalPrice += 1.63;
-    }
+    totalPrice += 1.19;
+}
+if (newCheckboxName === "pain") {
+    totalPrice += 2.00;
+}
+if (newCheckboxName === "fromage blanc") {
+    totalPrice += 1.63;
+}
+if (newCheckboxName === "lait") {
+    totalPrice += 0.99;
+}
+if (newCheckboxName === "beurre") {
+    totalPrice += 1.50;
+}
+if (newCheckboxName === "farine") {
+    totalPrice += 0.80;
+}
+if (newCheckboxName === "sucre") {
+    totalPrice += 0.75;
+}
+if (newCheckboxName === "chocolat") {
+    totalPrice += 2.50;
+}
+if (newCheckboxName === "poulet") {
+    totalPrice += 5.00;
+}
+if (newCheckboxName === "riz") {
+    totalPrice += 1.20;
+}
+if (newCheckboxName === "pâtes") {
+    totalPrice += 1.10;
+}
+if (newCheckboxName === "tomates") {
+    totalPrice += 1.30;
+}
+if (newCheckboxName === "fromage") {
+    totalPrice += 3.00;
+}
+if (newCheckboxName === "jambon") {
+    totalPrice += 2.70;
+}
+if (newCheckboxName === "salade") {
+    totalPrice += 1.50;
+}
+if (newCheckboxName === "pommes") {
+    totalPrice += 2.00;
+}
+if (newCheckboxName === "bananes") {
+    totalPrice += 1.80;
+}
+if (newCheckboxName === "poissons") {
+    totalPrice += 6.00;
+}
+if (newCheckboxName === "yaourt") {
+    totalPrice += 1.25;
+}
+if (newCheckboxName === "céréales") {
+    totalPrice += 3.50;
+}
+if (newCheckboxName === "jus d'orange") {
+    totalPrice += 2.90;
+}
+if (newCheckboxName === "thon") {
+    totalPrice += 2.20;
+}
+if (newCheckboxName === "huile d'olive") {
+    totalPrice += 4.00;
+}
+if (newCheckboxName === "miel") {
+    totalPrice += 3.60;
+}
+
 
     // Mise à jour de la div avec le nouveau total
     document.getElementById("total-price").textContent = `Total: ${totalPrice.toFixed(2)}€`;
@@ -319,13 +384,78 @@ function undoLastCheckbox() {
 
     // Mise à jour du prix total lors de la suppression
     if (label === "oeufs") {
-      totalPrice -= 1.19;
-    }  if (label === "pain") {
-      totalPrice -= 2.00;
-    }
-    if (label ==="fromage blanc") {
-      totalPrice -=1.63;
+    totalPrice -= 1.19;
 }
+if (label === "pain") {
+    totalPrice -= 2.00;
+}
+if (label === "fromage blanc") {
+    totalPrice -= 1.63;
+}
+if (label === "lait") {
+    totalPrice -= 0.99;
+}
+if (label === "beurre") {
+    totalPrice -= 1.50;
+}
+if (label === "farine") {
+    totalPrice -= 0.80;
+}
+if (label === "sucre") {
+    totalPrice -= 0.75;
+}
+if (label === "chocolat") {
+    totalPrice -= 2.50;
+}
+if (label === "poulet") {
+    totalPrice -= 5.00;
+}
+if (label === "riz") {
+    totalPrice -= 1.20;
+}
+if (label === "pâtes") {
+    totalPrice -= 1.10;
+}
+if (label === "tomates") {
+    totalPrice -= 1.30;
+}
+if (label === "fromage") {
+    totalPrice -= 3.00;
+}
+if (label === "jambon") {
+    totalPrice -= 2.70;
+}
+if (label === "salade") {
+    totalPrice -= 1.50;
+}
+if (label === "pommes") {
+    totalPrice -= 2.00;
+}
+if (label === "bananes") {
+    totalPrice -= 1.80;
+}
+if (label === "poissons") {
+    totalPrice -= 6.00;
+}
+if (label === "yaourt") {
+    totalPrice -= 1.25;
+}
+if (label === "céréales") {
+    totalPrice -= 3.50;
+}
+if (label === "jus d'orange") {
+    totalPrice -= 2.90;
+}
+if (label === "thon") {
+    totalPrice -= 2.20;
+}
+if (label === "huile d'olive") {
+    totalPrice -= 4.00;
+}
+if (label === "miel") {
+    totalPrice -= 3.60;
+}
+
     document.getElementById("total-price").textContent = `Total: ${totalPrice.toFixed(2)}€`;
 
     lastCheckboxItem.remove();
