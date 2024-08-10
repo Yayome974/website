@@ -4,6 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ma liste de course</title>
+     <!-- Meta tags pour le plein écran sur iOS -->
+     <meta name="apple-mobile-web-app-capable" content="yes" />
+     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+     <meta name="apple-mobile-web-app-title" content="Recette" />
+ 
+     <!-- Favicon and Icons -->
+     <link rel="icon" type="image/png" sizes="32x32" href="OIG3.jpg" />
+     <link rel="icon" type="image/png" sizes="16x16" href="OIG3.jpg" />
+     <link rel="icon" type="image/x-icon" href="OIG3.jpg" />
+     <link rel="shortcut icon" href="OIG3.jpg" />
+ 
+     <!-- Apple Touch Icons -->
+     <link rel="apple-touch-icon" sizes="57x57" href="OIG3.jpg" />
+     <link rel="apple-touch-icon" sizes="76x76" href="OIG3.jpg" />
+     <link rel="apple-touch-icon" sizes="120x120" href="OIG3.jpg" />
+     <link rel="apple-touch-icon" sizes="152x152" href="OIG3.jpg" />
+     <link rel="apple-touch-icon" sizes="180x180" href="OIG3.jpg" />
+ 
+     <!-- Android Icon -->
+     <link rel="icon" type="image/png" sizes="192x192" href="OIG3.jpg" />
+ 
+     <!-- CSS Files -->
+     <link rel="stylesheet" href="Style.css" />
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link
+       href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+       rel="stylesheet"
+     />
     <style>
       @media all and (max-width: 839px) {
         body {
@@ -19,7 +48,18 @@
           right: -67px;
           transform: translate(-50%, -50%);
         }
-
+.prix {
+  font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 16px;
+    text-align: center;
+    top: 260px;
+    position: absolute;
+    left: 26px;
+}
         input[type="text"] {
           width: 100%;
           max-width: 82%;
@@ -65,7 +105,7 @@
         }
 
         .checkbox-container {
-          margin-top: 250px;
+          margin-top: 170px;
           margin-left: 2px;
         }
 
@@ -172,8 +212,7 @@
       }
     </style>
   </head>
-  <body>
-    <h1>Ma liste de course</h1>
+   <h1>Ma liste de course</h1>
     <input
       type="search"
       id="search"
@@ -192,7 +231,7 @@
       alt=""
       class="iconesearch"
     />
-
+    <img src="Image/recharger (1).png" alt="" class="recharger" />
     <div id="mySidenav" class="sidenav" style="z-index: 10000">
       <a id="closeBtn" href="#" class="close">×</a>
       <ul>
@@ -228,61 +267,83 @@
     <div class="checkbox-container" id="checkbox-container">
       <!-- Les cases à cocher seront ajoutées ici -->
     </div>
+    <div id="total-price" class="prix">Total: 0€</div>
 
     <script>
       let lastCheckboxItem = null;
+let totalPrice = 0; // Variable pour stocker le total
 
-      function addCheckbox() {
-        const checkboxContainer = document.getElementById("checkbox-container");
-        const newCheckboxName = document.getElementById("new-checkbox").value;
+function addCheckbox() {
+  const checkboxContainer = document.getElementById("checkbox-container");
+  const newCheckboxName = document.getElementById("new-checkbox").value.trim().toLowerCase();
 
-        if (newCheckboxName.trim() !== "") {
-          const checkboxItem = document.createElement("div");
-          checkboxItem.className = "checkbox-item";
+  if (newCheckboxName !== "") {
+    const checkboxItem = document.createElement("div");
+    checkboxItem.className = "checkbox-item";
 
-          const checkbox = document.createElement("input");
-          checkbox.type = "checkbox";
-          checkbox.id = newCheckboxName;
-          checkbox.name = newCheckboxName;
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = newCheckboxName;
+    checkbox.name = newCheckboxName;
 
-          const label = document.createElement("label");
-          label.htmlFor = newCheckboxName;
-          label.textContent = newCheckboxName;
+    const label = document.createElement("label");
+    label.htmlFor = newCheckboxName;
+    label.textContent = newCheckboxName;
 
-          checkboxItem.appendChild(checkbox);
-          checkboxItem.appendChild(label);
+    checkboxItem.appendChild(checkbox);
+    checkboxItem.appendChild(label);
 
-          checkboxContainer.appendChild(checkboxItem);
+    checkboxContainer.appendChild(checkboxItem);
 
-          lastCheckboxItem = checkboxItem;
+    // Mise à jour du prix total en fonction du nom de la tâche
+    if (newCheckboxName === "oeufs") {
+      totalPrice += 1.19;
+    } if (newCheckboxName === "pain") {
+      totalPrice += 2.00;
+    }
+    if (newCheckboxName === "fromage blanc") {
+      totalPrice += 1.63;
+    }
 
-          document.getElementById("new-checkbox").value = "";
-        }
-      }
+    // Mise à jour de la div avec le nouveau total
+    document.getElementById("total-price").textContent = `Total: ${totalPrice.toFixed(2)}€`;
 
-      function undoLastCheckbox() {
-        if (lastCheckboxItem) {
-          lastCheckboxItem.remove();
-          lastCheckboxItem = null;
-        }
-      }
+    lastCheckboxItem = checkboxItem;
 
-      document
-        .getElementById("add-checkbox")
-        .addEventListener("click", addCheckbox);
+    document.getElementById("new-checkbox").value = "";
+  }
+}
 
-      document
-        .getElementById("undo-checkbox")
-        .addEventListener("click", undoLastCheckbox);
+function undoLastCheckbox() {
+  if (lastCheckboxItem) {
+    const label = lastCheckboxItem.querySelector("label").textContent.toLowerCase();
 
-      document
-        .getElementById("new-checkbox")
-        .addEventListener("keydown", function (event) {
-          if (event.key === "Enter") {
-            addCheckbox();
-            event.preventDefault();
-          }
-        });
+    // Mise à jour du prix total lors de la suppression
+    if (label === "oeufs") {
+      totalPrice -= 1.19;
+    }  if (label === "pain") {
+      totalPrice -= 2.00;
+    }
+    if (label ==="fromage blanc") {
+      totalPrice -=1.63;
+}
+    document.getElementById("total-price").textContent = `Total: ${totalPrice.toFixed(2)}€`;
+
+    lastCheckboxItem.remove();
+    lastCheckboxItem = null;
+  }
+}
+
+document.getElementById("add-checkbox").addEventListener("click", addCheckbox);
+
+document.getElementById("undo-checkbox").addEventListener("click", undoLastCheckbox);
+
+document.getElementById("new-checkbox").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    addCheckbox();
+    event.preventDefault();
+  }
+});
 
       function ouvrirPage() {
         var a = document.getElementById("search").value.toLowerCase();
