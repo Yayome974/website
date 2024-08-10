@@ -270,241 +270,127 @@
 
     <script>
       let lastCheckboxItem = null;
-let totalPrice = 0; // Variable pour stocker le total
-
-function addCheckbox() {
-  const checkboxContainer = document.getElementById("checkbox-container");
-  const newCheckboxName = document.getElementById("new-checkbox").value.trim().toLowerCase();
-
-  if (newCheckboxName !== "") {
-    const checkboxItem = document.createElement("div");
-    checkboxItem.className = "checkbox-item";
-
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.id = newCheckboxName;
-    checkbox.name = newCheckboxName;
-
-    const label = document.createElement("label");
-    label.htmlFor = newCheckboxName;
-    label.textContent = newCheckboxName;
-
-    checkboxItem.appendChild(checkbox);
-    checkboxItem.appendChild(label);
-
-    checkboxContainer.appendChild(checkboxItem);
-
-    // Mise à jour du prix total en fonction du nom de la tâche
-    if (newCheckboxName === "oeufs") {
-    totalPrice += 1.19;
-}
-if (newCheckboxName === "pain") {
-    totalPrice += 2.00;
-}
-if (newCheckboxName === "fromage blanc") {
-    totalPrice += 1.63;
-}
-if (newCheckboxName === "lait") {
-    totalPrice += 0.99;
-}
-if (newCheckboxName === "beurre") {
-    totalPrice += 1.50;
-}
-if (newCheckboxName === "farine") {
-    totalPrice += 0.80;
-}
-if (newCheckboxName === "sucre") {
-    totalPrice += 0.75;
-}
-if (newCheckboxName === "chocolat") {
-    totalPrice += 2.50;
-}
-if (newCheckboxName === "poulet") {
-    totalPrice += 5.00;
-}
-if (newCheckboxName === "riz") {
-    totalPrice += 1.20;
-}
-if (newCheckboxName === "pâtes") {
-    totalPrice += 1.10;
-}
-if (newCheckboxName === "tomates") {
-    totalPrice += 1.30;
-}
-if (newCheckboxName === "fromage") {
-    totalPrice += 3.00;
-}
-if (newCheckboxName === "jambon") {
-    totalPrice += 2.70;
-}
-if (newCheckboxName === "salade") {
-    totalPrice += 1.50;
-}
-if (newCheckboxName === "pommes") {
-    totalPrice += 2.00;
-}
-if (newCheckboxName === "bananes") {
-    totalPrice += 1.80;
-}
-if (newCheckboxName === "poissons") {
-    totalPrice += 6.00;
-}
-if (newCheckboxName === "yaourt") {
-    totalPrice += 1.25;
-}
-if (newCheckboxName === "céréales") {
-    totalPrice += 3.50;
-}
-if (newCheckboxName === "jus d'orange") {
-    totalPrice += 2.90;
-}
-if (newCheckboxName === "thon") {
-    totalPrice += 2.20;
-}
-if (newCheckboxName === "huile d'olive") {
-    totalPrice += 4.00;
-}
-if (newCheckboxName === "miel") {
-    totalPrice += 3.60;
-}
-
-
-    // Mise à jour de la div avec le nouveau total
-    document.getElementById("total-price").textContent = `Total: ${totalPrice.toFixed(2)}€`;
-
-    lastCheckboxItem = checkboxItem;
-
-    document.getElementById("new-checkbox").value = "";
-  }
-}
-
-function undoLastCheckbox() {
-  if (lastCheckboxItem) {
-    const label = lastCheckboxItem.querySelector("label").textContent.toLowerCase();
-
-    // Mise à jour du prix total lors de la suppression
-    if (label === "oeufs") {
-    totalPrice -= 1.19;
-}
-if (label === "pain") {
-    totalPrice -= 2.00;
-}
-if (label === "fromage blanc") {
-    totalPrice -= 1.63;
-}
-if (label === "lait") {
-    totalPrice -= 0.99;
-}
-if (label === "beurre") {
-    totalPrice -= 1.50;
-}
-if (label === "farine") {
-    totalPrice -= 0.80;
-}
-if (label === "sucre") {
-    totalPrice -= 0.75;
-}
-if (label === "chocolat") {
-    totalPrice -= 2.50;
-}
-if (label === "poulet") {
-    totalPrice -= 5.00;
-}
-if (label === "riz") {
-    totalPrice -= 1.20;
-}
-if (label === "pâtes") {
-    totalPrice -= 1.10;
-}
-if (label === "tomates") {
-    totalPrice -= 1.30;
-}
-if (label === "fromage") {
-    totalPrice -= 3.00;
-}
-if (label === "jambon") {
-    totalPrice -= 2.70;
-}
-if (label === "salade") {
-    totalPrice -= 1.50;
-}
-if (label === "pommes") {
-    totalPrice -= 2.00;
-}
-if (label === "bananes") {
-    totalPrice -= 1.80;
-}
-if (label === "poissons") {
-    totalPrice -= 6.00;
-}
-if (label === "yaourt") {
-    totalPrice -= 1.25;
-}
-if (label === "céréales") {
-    totalPrice -= 3.50;
-}
-if (label === "jus d'orange") {
-    totalPrice -= 2.90;
-}
-if (label === "thon") {
-    totalPrice -= 2.20;
-}
-if (label === "huile d'olive") {
-    totalPrice -= 4.00;
-}
-if (label === "miel") {
-    totalPrice -= 3.60;
-}
-
-    document.getElementById("total-price").textContent = `Total: ${totalPrice.toFixed(2)}€`;
-
-    lastCheckboxItem.remove();
-    lastCheckboxItem = null;
-  }
-}
-
-document.getElementById("add-checkbox").addEventListener("click", addCheckbox);
-
-document.getElementById("undo-checkbox").addEventListener("click", undoLastCheckbox);
-
-document.getElementById("new-checkbox").addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    addCheckbox();
-    event.preventDefault();
-  }
-});
-
-      function ouvrirPage() {
-        var a = document.getElementById("search").value.toLowerCase();
-        console.log("Valeur entrée :", a);
-
-        if (a === "chat") {
-          console.log("Recherche 'chat' détectée");
-          window.location.href =
-            "https://www.google.com/search?client=opera&q=api+recette+de+cuisine&sourceid=opera&ie=UTF-8&oe=UTF-8";
-        } else if (a === "chien") {
-          console.log("Recherche 'chien' détectée");
-          window.location.href = "index2.html";
-        } else {
-          console.log("Recherche par défaut détectée");
-          window.location.href = "https://www.youtube.com/";
-        }
+      let totalPrice = 0; // Variable pour stocker le total
+      const itemQuantities = {}; // Objet pour stocker les quantités des articles
+      
+      function addCheckbox() {
+          const checkboxContainer = document.getElementById("checkbox-container");
+          const newCheckboxName = document.getElementById("new-checkbox").value.trim().toLowerCase();
+      
+          if (newCheckboxName !== "") {
+              // Si l'article existe déjà, on incrémente la quantité
+              if (itemQuantities[newCheckboxName]) {
+                  itemQuantities[newCheckboxName]++;
+              } else {
+                  itemQuantities[newCheckboxName] = 1; // Sinon, on l'ajoute avec une quantité de 1
+              }
+      
+              // Mise à jour du prix total en fonction du nom de l'article et de sa quantité
+              const itemPrice = getItemPrice(newCheckboxName) * itemQuantities[newCheckboxName];
+              
+              // Retirer l'ancien prix avant de le recalculer avec la nouvelle quantité
+              totalPrice -= getItemPrice(newCheckboxName) * (itemQuantities[newCheckboxName] - 1);
+              totalPrice += itemPrice;
+      
+              // Vérifier si la case à cocher existe déjà, sinon l'ajouter
+              let existingCheckbox = document.getElementById(`checkbox-${newCheckboxName}`);
+              if (!existingCheckbox) {
+                  const checkboxItem = document.createElement("div");
+                  checkboxItem.className = "checkbox-item";
+      
+                  const checkbox = document.createElement("input");
+                  checkbox.type = "checkbox";
+                  checkbox.id = `checkbox-${newCheckboxName}`;
+                  checkbox.name = newCheckboxName;
+      
+                  const label = document.createElement("label");
+                  label.htmlFor = newCheckboxName;
+                  label.textContent = `${newCheckboxName} (${itemQuantities[newCheckboxName]})`;
+      
+                  checkboxItem.appendChild(checkbox);
+                  checkboxItem.appendChild(label);
+      
+                  checkboxContainer.appendChild(checkboxItem);
+      
+                  lastCheckboxItem = checkboxItem;
+              } else {
+                  // Mise à jour du label pour refléter la nouvelle quantité
+                  const label = existingCheckbox.nextElementSibling;
+                  label.textContent = `${newCheckboxName} (${itemQuantities[newCheckboxName]})`;
+              }
+      
+              // Mise à jour de la div avec le nouveau total
+              document.getElementById("total-price").textContent = `Total: ${totalPrice.toFixed(2)}€`;
+      
+              document.getElementById("new-checkbox").value = "";
+          }
       }
-
-      var sidenav = document.getElementById("mySidenav");
-      var openBtn = document.getElementById("openBtn");
-      var closeBtn = document.getElementById("closeBtn");
-
-      openBtn.onclick = openNav;
-      closeBtn.onclick = closeNav;
-
-      function openNav() {
-        sidenav.classList.add("active");
+      
+      function getItemPrice(item) {
+          switch(item) {
+              case "oeufs": return 1.19;
+              case "pain": return 2.00;
+              case "fromage blanc": return 1.63;
+              case "lait": return 0.99;
+              case "beurre": return 1.50;
+              case "farine": return 0.80;
+              case "sucre": return 0.75;
+              case "chocolat": return 2.50;
+              case "poulet": return 5.00;
+              case "riz": return 1.20;
+              case "pâtes": return 1.10;
+              case "tomates": return 1.30;
+              case "fromage": return 3.00;
+              case "jambon": return 2.70;
+              case "salade": return 1.50;
+              case "pommes": return 2.00;
+              case "bananes": return 1.80;
+              case "poissons": return 6.00;
+              case "yaourt": return 1.25;
+              case "céréales": return 3.50;
+              case "jus d'orange": return 2.90;
+              case "thon": return 2.20;
+              case "huile d'olive": return 4.00;
+              case "miel": return 3.60;
+              default: return 0;
+              case "café": return 7;
+          }
       }
-
-      function closeNav() {
-        sidenav.classList.remove("active");
+      
+      function undoLastCheckbox() {
+          if (lastCheckboxItem) {
+              const label = lastCheckboxItem.querySelector("label").textContent.toLowerCase().split(" (")[0];
+      
+              if (itemQuantities[label]) {
+                  totalPrice -= getItemPrice(label) * itemQuantities[label];
+                  itemQuantities[label]--;
+      
+                  if (itemQuantities[label] === 0) {
+                      delete itemQuantities[label];
+                      lastCheckboxItem.remove();
+                      lastCheckboxItem = null;
+                  } else {
+                      const existingCheckbox = document.getElementById(`checkbox-${label}`);
+                      if (existingCheckbox) {
+                          existingCheckbox.nextElementSibling.textContent = `${label} (${itemQuantities[label]})`;
+                      }
+                  }
+      
+                  document.getElementById("total-price").textContent = `Total: ${totalPrice.toFixed(2)}€`;
+              }
+          }
       }
-    </script>
+      
+      document.getElementById("add-checkbox").addEventListener("click", addCheckbox);
+      document.getElementById("undo-checkbox").addEventListener("click", undoLastCheckbox);
+      
+      document.getElementById("new-checkbox").addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+              addCheckbox();
+              event.preventDefault();
+          }
+      });
+      </script>
+      
   </body>
 </html>
