@@ -137,42 +137,11 @@
     <!-- Background Element -->
     <div class="fond" style="position: absolute; top: 2000px">x</div>
 
-    <!-- JavaScript Files -->
-    <script src="recette.js"></script>
+    
 
     <!-- JavaScript Functions -->
-    <script>
-      function ouvrirPage() {
-        var a = document.getElementById("search").value.toLowerCase();
-        console.log("Valeur entrée :", a);
-
-        if (a === "chat") {
-          console.log("Recherche 'chat' détectée");
-          window.location.href =
-            "https://www.google.com/search?client=opera&q=api+recette+de+cuisine&sourceid=opera&ie=UTF-8&oe=UTF-8";
-        } else if (a === "chien") {
-          console.log("Recherche 'chien' détectée");
-          window.location.href = "index2.html";
-        } else {
-          console.log("Recherche par défaut détectée");
-          window.location.href = "https://www.youtube.com/";
-        }
-      }
-
-      var sidenav = document.getElementById("mySidenav");
-      var openBtn = document.getElementById("openBtn");
-      var closeBtn = document.getElementById("closeBtn");
-
-      openBtn.onclick = openNav;
-      closeBtn.onclick = closeNav;
-
-      function openNav() {
-        sidenav.classList.add("active");
-      }
-
-      function closeNav() {
-        sidenav.classList.remove("active");
-      }
+    <script src="script.js">
+     
     </script>
   </body>
 </html>
