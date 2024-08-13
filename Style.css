@@ -7,6 +7,26 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+.nouvelle-div {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 32px;
+  text-align: center;
+  margin-top: 1450px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+}
+.imagepp2 {
+  display: block;
+  margin: 100px auto 20px auto; /* Ajout de margin-top pour déplacer l'image vers le bas */
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
 .container {
   display: none;
 }
