@@ -1,0 +1,15 @@
+{
+  "h1": {
+    "textContent": "Dessert :",
+    "className": "nouvelle-div"
+  },
+  "h2": {
+    "textContent": "Original American Cookies de Mike",
+    "className": "nouvelle-h2"
+  },
+  "img": {
+    "src": "21945_w600 2.png",
+    "alt": "Nouvelle image",
+    "className": "imagepp2"
+  }
+}
