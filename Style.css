@@ -7,24 +7,48 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-.nouvelle-div {
+.nouvelle-h2 {
   font-family: "Noto Serif", serif;
   font-optical-sizing: auto;
   font-weight: bold;
   font-style: normal;
   font-variation-settings: "wdth" 100;
-  font-size: 32px;
+  font-size: 20px;
   text-align: center;
-  margin-top: 1450px;
+  margin: 1px auto 20px auto; /* Ajout de margin-top pour déplacer l'image vers le bas */
+  position: absolute;
+}
+.boutonquirenvoievertlesthèmes {
+  padding: 10px 10px;
+  width: 164px;
+  position: absolute;
+  top: 250px;
+  text-align: center;
+  height: 37px;
+  border-radius: 13px;
+  background-color: #d36363ad;
+  font-family: "Noto Serif", serif;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
+}
+.nouvelle-div {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 40px;
+  margin-top: 1450px;
+  left: 20px;
   position: relative;
 }
 .imagepp2 {
   display: block;
   margin: 100px auto 20px auto; /* Ajout de margin-top pour déplacer l'image vers le bas */
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
+  width: 300px;
   position: relative;
 }
 .container {
