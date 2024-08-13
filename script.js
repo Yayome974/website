@@ -1,4 +1,5 @@
 var myHeaders = new Headers();
+
 myHeaders.append("apikey", "yC1PiNJVGksrfvyhiCdZAp0kJTJM0Dvf");
 
 var requestOptions = {
@@ -99,30 +100,42 @@ document.addEventListener("DOMContentLoaded", function () {
     loading.style.display = "none";
   }, 3000);
 });
+
 const bouton = document.getElementById("ajouterDivBtn");
 const conteneur = document.getElementById("conteneur");
 
 // Fonction pour ajouter la nouvelle div et l'image
 function ajouterElement() {
   // Créer une nouvelle div
-  const nouvelleDiv = document.createElement("div");
-  nouvelleDiv.textContent = "Dessert :";
-  nouvelleDiv.className = "nouvelle-div";
+  fetch(`Recette.json`)
+    .then((response) => response.json())
+    .then((data) => {
+      const nouvelleDiv = document.createElement("h1");
+      nouvelleDiv.textContent = data.h1.textContent;
+      nouvelleDiv.className = data.h1.className;
 
-  // Créer une nouvelle image
-  const nouvelleIMG = document.createElement("img");
-  nouvelleIMG.src = "21945_w600 2.png"; // Assurez-vous que le chemin de l'image est correct
-  nouvelleIMG.alt = "Nouvelle image";
-  nouvelleIMG.className = "imagepp2";
+      const nouvelleH2 = document.createElement("h2");
+      nouvelleH2.textContent = data.h2.textContent;
+      nouvelleH2.className = data.h2.className;
 
-  // Ajouter la nouvelle div et l'image au conteneur
-  conteneur.appendChild(nouvelleDiv);
-  conteneur.appendChild(nouvelleIMG);
+      // Créer l'image
+      const nouvelleIMG = document.createElement("img");
+      nouvelleIMG.src = data.img.src;
+      nouvelleIMG.alt = data.img.alt;
+      nouvelleIMG.className = data.img.className;
 
-  // Attendre 3 secondes avant de faire défiler jusqu'à l'image
-  setTimeout(function () {
-    nouvelleIMG.scrollIntoView({ behavior: "smooth" });
-  }, 1000); // 3000 millisecondes = 3 secondes
+      // Ajouter les éléments au conteneur
+      conteneur.appendChild(nouvelleDiv);
+      conteneur.appendChild(nouvelleH2);
+      conteneur.appendChild(nouvelleIMG);
+
+      // Attendre que l'image soit complètement chargée avant de faire défiler
+      nouvelleIMG.onload = function () {
+        setTimeout(function () {
+          nouvelleIMG.scrollIntoView({ behavior: "smooth" });
+        }, 1000); // 1000 millisecondes = 1 seconde
+      };
+    });
 }
 
 bouton.addEventListener("click", function () {
@@ -138,6 +151,6 @@ if (localStorage.getItem("addElement") === "true") {
   // Réinitialiser le stockage pour éviter d'ajouter à chaque rechargement
   localStorage.removeItem("addElement");
 
-  // Ajouter l'élément au conteneur et faire défiler jusqu'à l'image après 3 secondes
+  // Ajouter l'élément au conteneur et faire défiler jusqu'à l'image après 1 seconde
   ajouterElement();
 }
