@@ -44,7 +44,7 @@
 
   <body>
     <!-- Horizontal Image Scroll Container -->
-    <div class="horizontal-scroll-container">
+    <div class="horizontal-scroll-container" id="cible">
       <img
         src="https://cuisine-addict.com/wp-content/uploads/2019/10/recette-rougail-saucisse.jpg"
         alt="Recette rougail saucisse"
@@ -134,7 +134,7 @@
       <img src="Image/star_filled.png" alt="Star 4" />
       <img src="Image/star.png" alt="Star 5" />
     </div>
-    <button id="ajouterDivBtn" class="boutonquirenvoievertlesthèmes">Explorer</button>
+    <button id="voirtheme" onclick="scrollToDiv()"class="boutonquirenvoievertlesthèmes">Explorer</button>
 
     <h1 id="conteneur"></h1>
     <h2 id="titrecookie"></h2>
@@ -143,7 +143,9 @@
     <!-- Background Element -->
     <div class="fond" style="position: absolute; top: 2000px">x</div>
 
-    
+ <div class="categorie-dessert" id="categorie-dessert" >
+  <button id="ajouterDivBtn" class="boutonquirenvoievertlesthème">Explorer</button><img width="50" height="50" src="https://img.icons8.com/ios/50/dessert.png" class="logo-dessert" alt="dessert"
+  /></div>
 
     <!-- JavaScript Functions -->
     <script src="script.js">
