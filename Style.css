@@ -7,6 +7,21 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+.categorie-dessert {
+  max-width: 90%;
+  width: 300px;           /* Largeur du rectangle */
+  height: 60px;          /* Hauteur du rectangle */
+  border-radius: 20px;    /* Coins arrondis pour un effet rectangle */
+  background-image: linear-gradient(to top right, #ff9a9e, #fad0c4 99%, #fad0c4);
+  left: 20px;
+  position: absolute;
+  top: 1100px;
+}
+
+.logo-dessert {
+  margin-left: 20px;
+}
+
 .nouvelle-h2 {
   font-family: "Noto Serif", serif;
   font-optical-sizing: auto;
@@ -19,6 +34,22 @@ body {
   position: absolute;
 }
 .boutonquirenvoievertlesthèmes {
+  padding: 10px 10px;
+  width: 164px;
+  position: absolute;
+  top: 250px;
+  text-align: center;
+  height: 37px;
+  border-radius: 13px;
+  background-color: #d36363ad;
+  font-family: "Noto Serif", serif;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.boutonquirenvoievertlesthème {
   padding: 10px 10px;
   width: 164px;
   position: absolute;
@@ -106,8 +137,12 @@ body {
   position: absolute;
   top: 130px;
   left: 0px;
-  max-width: 100%;
+  width: 100%;        /* Assure que l'image prend 100% de la largeur de l'écran */
+  height: auto;       /* Conserve le ratio d'aspect de l'image */
+  max-width: 100%;    /* Limite la largeur à 100% si elle dépasse */
+  object-fit: cover;  /* Facultatif, pour que l'image remplisse son conteneur */
 }
+
 
 /* Steps */
 .Etape1,
@@ -414,5 +449,16 @@ input::placeholder {
     margin-right: -3px;
     height: 35px;
     width: auto;
+  }
+}
+@media all and (min-width: 428px) and (max-height: 929px) {
+ 
+  .imagelog {
+
+    position: absolute;
+    top: 130px;
+    left: 0px;
+    max-width: 100%;
+    width: 428px;
   }
 }
