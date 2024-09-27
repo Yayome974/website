@@ -154,3 +154,9 @@ if (localStorage.getItem("addElement") === "true") {
   // Ajouter l'élément au conteneur et faire défiler jusqu'à l'image après 1 seconde
   ajouterElement();
 }
+
+
+  function scrollToDiv() {
+    const div = document.getElementById("cible");
+    div.scrollIntoView({ behavior: "smooth" });
+  }
