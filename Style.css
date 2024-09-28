@@ -1,25 +1,29 @@
 body {
   background-color: rgba(255, 255, 255, 0.931);
-  overflow-x: none; /*pour supprimer le defilement horizontal*/
-  overflow-x: smooth;
+  overflow-x: hidden; /* pour supprimer le défilement horizontal */
   max-width: 100%;
-  margin: 0; /* Pour éviter les marges par défaut */
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 .categorie-dessert {
-  max-width: 90%;
-  width: 300px;           /* Largeur du rectangle */
-  height: 60px;          /* Hauteur du rectangle */
-  border-radius: 20px;    /* Coins arrondis pour un effet rectangle */
-  background-image: linear-gradient(to top right, #ff9a9e, #fad0c4 99%, #fad0c4);
+  max-width: 90%;  /* Utilisation de max-width pour limiter la taille */
+  width: 100%;
+  height: 60px;
+  border-radius: 20px;
+  background-color: #9d4d1c00;
   left: 20px;
   position: absolute;
   top: 1100px;
 }
 
+/* autres styles inchangés */
+
+
 .logo-dessert {
   margin-left: 20px;
+  margin-top: -8px;
 }
 
 .nouvelle-h2 {
@@ -50,20 +54,23 @@ body {
   transform: translate(-50%, -50%);
 }
 .boutonquirenvoievertlesthème {
-  padding: 10px 10px;
+  padding: 80px 120px;
+  padding-top: 1px;
   width: 164px;
   position: absolute;
-  top: 250px;
+  top: 40px;
   text-align: center;
-  height: 37px;
+  height: 3px;
   border-radius: 13px;
-  background-color: #d36363ad;
+  background-color: #d3636300;
   font-family: "Noto Serif", serif;
-  font-weight: bold;
-  color: #ffffff;
+  font-weight: bolder;
+  color: #c1751f;
+  font-size: 30px;
   border: none;
-  left: 50%;
+  left: 30%;
   transform: translate(-50%, -50%);
+  max-width: 90%;
 }
 .nouvelle-div {
   font-family: "M PLUS Rounded 1c", sans-serif;
