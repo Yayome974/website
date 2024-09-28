@@ -1,6 +1,7 @@
 body {
   background-color: rgba(255, 255, 255, 0.931);
   overflow-x: hidden; /* pour supprimer le défilement horizontal */
+   overflow-x: none;
   max-width: 100%;
   margin: 0;
   padding: 0;
