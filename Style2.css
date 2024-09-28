@@ -6,7 +6,22 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+.fullscreen {
+  height: 100vh; /* 100% de la hauteur de la fenêtre */
+  width: 100vw;  /* 100% de la largeur de la fenêtre */
+  overflow: hidden; /* Évite que le contenu dépasse */
+}
 .imagepp {
   left: 10%;
   position: absolute;
