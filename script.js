@@ -93,12 +93,17 @@ function openNav() {
 function closeNav() {
   sidenav.classList.remove("active");
 }
+
 document.addEventListener("DOMContentLoaded", function () {
   var loading = document.getElementById("loading");
   loading.style.display = "flex";
+  
+  // Générer un nombre aléatoire entre 1000 ms (1 seconde) et 3000 ms (3 secondes)
+  var randomTime = Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000;
+
   setTimeout(function () {
     loading.style.display = "none";
-  }, 3000);
+  }, randomTime); // Utiliser le temps aléatoire
 });
 
 const bouton = document.getElementById("ajouterDivBtn");
