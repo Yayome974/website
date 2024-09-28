@@ -48,12 +48,25 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
 }
+
+.loading-content {
+  display: flex;
+  flex-direction: column; /* Met l'image et le texte en colonne */
+  align-items: center; /* Centre les éléments horizontalement */
+}
+
+.loading-content p {
+  margin-top: 10px; /* Ajoute un espace entre l'image et le texte */
+  font-size: 18px;
+  color: #000;
+}
+
 .boutonquirenvoievertlesthèmes {
   padding: 10px 10px;
   width: 164px;
