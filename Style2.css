@@ -26,6 +26,7 @@ body {
     text-align: center;
     top: 120px;
     position: absolute;
+    z-index: 10;
   }
   .star {
     display: flex;
@@ -73,30 +74,36 @@ body {
     font-style: normal;
     font-variation-settings: "wdth" 100;
 }
+.temps {
+  height: 35px;
+  width: 35px;
+  top: 443px;
+  left: 233px;
+  position: absolute;
+}
+
+.time {
+  top: 457px;
+  left: 273px;
+  position: absolute;
+}
 
 .glass-container {
     position: absolute;
-    width: 80%;
-    top: 400px;
+    width: 100%;
+   
+    top: 0px;
     margin: auto;
-    padding: 300px;
-    background: rgba(203, 8, 8, 0.1);
+    padding-top: 100000px;
+    left: 0px;
+    background: rgba(99, 32, 215, 0.1);
     border-radius: 15px;
     backdrop-filter: blur(90px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   
     border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 0;
 }
-.glass-container2 {
-  position: absolute;
-  width: 80%;
-  top: 800px;
-  margin: auto;
-  padding: 33px;
-  backdrop-filter: blur(2px); /* Applique seulement un flou à l'arrière-plan */
-  border-radius: 15px; /* Bord arrondi pour un design plus doux */
 
-  z-index: 1;
-}
 .imagepp {
     height: 202px;
     width: 340px;
@@ -231,8 +238,9 @@ body {
     border-radius: 12px;
     transition: background-color 0.3s, transform 0.3s;
     position: absolute;
-    top: 880px;
+    top: 810px;
     left: 15px;
+    z-index: 10;
   }
 
   .btn:hover {
