@@ -6,22 +6,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-}
 
-* {
-  box-sizing: border-box;
-}
-
-.fullscreen {
-  height: 100vh; /* 100% de la hauteur de la fenêtre */
-  width: 100vw;  /* 100% de la largeur de la fenêtre */
-  overflow: hidden; /* Évite que le contenu dépasse */
-}
 .imagepp {
   left: 10%;
   position: absolute;
@@ -55,70 +40,77 @@ html, body {
     width: auto; /* Assurez-vous que les proportions des images sont maintenues */
   }
   .Etape1 {
-  font-family: "Fredoka", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-  font-variation-settings:"wdth" 100;
-  position: absolute;
-  top: 550px;
-  left: 1%;
-
+    top: 550px;
 }
-  }
-  .Etape2 {
-    font-family: "Fredoka", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    font-variation-settings:"wdth" 100;
-    position: absolute;
+
+.Etape2 {
     top: 650px;
-    left: 1%;
-  }
-.Etape {
-  font-family: "Fredoka", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
 }
-  .Etape3 {
-    font-family: "Fredoka", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    font-variation-settings:"wdth" 100;
-    position: absolute;
+
+.Etape3 {
     top: 740px;
-    left: 1%;
-  }
-  .Etape4 {
+}
+
+.Etape4 {
+    top: 830px;
+}
+  .Etape1, .Etape2, .Etape3, .Etape4 {
     font-family: "Fredoka", sans-serif;
     font-optical-sizing: auto;
-    font-weight: weight;
+    font-weight: 400; /* Remplace "weight" par un poids valide comme 400, 500, etc. */
     font-style: normal;
-    font-variation-settings:"wdth" 100;
+    font-variation-settings: "wdth" 100;
     position: absolute;
-    top: 830px;
     left: 1%;
-  }
-  .fond {
-    position: absolute;
-    top: 1000px;
-  }
+}
 
-  .imagepp {
-    position: absolute;
 
+
+.Etape {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500; /* Choisir un poids valide */
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.glass-container {
+    position: absolute;
+    width: 80%;
+    top: 400px;
+    margin: auto;
+    padding: 300px;
+    background: rgba(203, 8, 8, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(90px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.glass-container2 {
+  position: absolute;
+  width: 80%;
+  top: 800px;
+  margin: auto;
+  padding: 33px;
+  backdrop-filter: blur(2px); /* Applique seulement un flou à l'arrière-plan */
+  border-radius: 15px; /* Bord arrondi pour un design plus doux */
+
+  z-index: 1;
+}
+.imagepp {
     height: 202px;
     width: 340px;
     position: absolute;
     top: 330px;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
+
+.fond {
+    position: absolute;
+    top: 1000px;
+}
+
   .carre3 {
     background-color: #1c569d;
     height: 40px;
@@ -270,3 +262,4 @@ html, body {
     z-index: 9999;
   }
 
+}
